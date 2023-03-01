@@ -6,11 +6,57 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Base HTML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: content-box;
+        }
+
+        .container {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            height: 95vh;
+            width: 95vw;
+        }
+
+        .sidebar {
+            padding: 0 10px;
+        }
+
+        .main {
+            flex: 1;
+        }
+
+        .main iframe {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-<h1>
-    基础页面
-    <iframe src="http://127.0.0.1:8888" frameborder="0"></iframe>
-</h1>
+<div class="container">
+    <div class="sidebar">
+        <button class="btn" data-src="http://127.0.0.1:8888">
+            bt sync
+        </button>
+    </div>
+    <div class="main">
+        <iframe id="iframe" src="" frameborder="0">
+            no page
+        </iframe>
+    </div>
+</div>
+<script>
+    (() => {
+        const iframe = document.getElementById('iframe')
+        const buttons = [...document.getElementsByClassName('btn')]
+        buttons.forEach(el => el.addEventListener('click', function (e) {
+            const src = this.getAttribute("data-src")
+            iframe.setAttribute('src',src)
+        }))
+    })()
+</script>
 </body>
 </html>
