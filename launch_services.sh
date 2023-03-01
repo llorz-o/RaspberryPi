@@ -1,1 +1,1 @@
-pm2 start ~/home/richard/RaspberryPi/start_frp.sh
+pm2 start ~/RaspberryPi/start_frp.sh
