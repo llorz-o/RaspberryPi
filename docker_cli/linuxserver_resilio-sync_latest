@@ -1,0 +1,12 @@
+docker run -d \
+  --name=resilio-sync \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Etc/UTC \
+  -p 8888:8888 \
+  -p 55555:55555 \
+  -v /home/richard/.sync:/config \
+  -v /media/sda1/resilio_sync/downloads:/downloads \
+  -v /media/sda1/resilio_sync/sync:/sync \
+  --restart unless-stopped \
+  lscr.io/linuxserver/resilio-sync:latest
