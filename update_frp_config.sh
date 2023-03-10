@@ -2,8 +2,8 @@ frp_dir=/home/richard/work/frp/frp_0.47.0_linux_arm
 
 file_name=frpc.ini
 
-pwd=$(pwd)
+this_dir=$(dirname "$0")
 
-local_frpc_config="$pwd/frp_config/frpc.init"
+local_frpc_config="$this_dir/frp_config/frpc.init"
 
 cat "$local_frpc_config" >>"$frp_dir/$file_name"
