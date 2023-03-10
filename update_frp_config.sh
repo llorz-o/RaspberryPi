@@ -4,6 +4,6 @@ file_name=frpc.ini
 
 this_dir=$(dirname "$0")
 
-local_frpc_config="$this_dir/frp_config/frpc.init"
+local_frpc_config="~/$this_dir/frp_config/frpc.init"
 
 cat "$local_frpc_config" >>"$frp_dir/$file_name"
