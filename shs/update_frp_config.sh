@@ -20,5 +20,6 @@ $frpc_app_path verify -c "$local_frpc_config_path"
 err_catch $? "frpc config verify"
 
 file_content=$(cat "$local_frpc_config_path")
-echo "$file_content" >>"$frp_dir/$file_name"
+# > 覆盖写入, >> 追加写入文件
+echo "$file_content" >"$frp_dir/$file_name"
 err_catch $? "rewrite config"
