@@ -1,6 +1,6 @@
 err_catch() {
   if [ "$1" = "0" ]; then
-    echo "success"
+    echo "$2 success"
   else
     echo "catch an error"
     echo "any type will off this terminal"
@@ -17,8 +17,8 @@ frpc_app_path="$frp_dir/$app_name"
 local_frpc_config_path="$HOME/RaspberryPi/frp_config/frpc.ini"
 
 $frpc_app_path verify -c "$local_frpc_config_path"
-err_catch $?
+err_catch $? "frpc config verify"
 
 file_content=$(cat "$local_frpc_config_path")
 echo "$file_content" >>"$frp_dir/$file_name"
-err_catch $?
+err_catch $? "rewrite config"
