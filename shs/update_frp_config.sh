@@ -1,4 +1,4 @@
-function err_catch() {
+err_catch() {
   if [ "$1" = "0" ]; then
     echo "success"
   else
