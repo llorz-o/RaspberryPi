@@ -16,7 +16,7 @@ file_name=frpc.ini
 frpc_app_path="$frp_dir/$app_name"
 local_frpc_config_path="$HOME/RaspberryPi/frp_config/frpc.ini"
 
-$($frpc_app_path) verify -c "$local_frpc_config_path"
+$frpc_app_path verify -c "$local_frpc_config_path"
 err_catch $?
 
 file_content=$(cat "$local_frpc_config_path")
