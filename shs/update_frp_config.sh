@@ -23,3 +23,6 @@ file_content=$(cat "$local_frpc_config_path")
 # > 覆盖写入, >> 追加写入文件
 echo "$file_content" >"$frp_dir/$file_name"
 err_catch $? "rewrite config"
+
+pm2 restart server_frp
+err_catch $? "restart pm2 frp"
