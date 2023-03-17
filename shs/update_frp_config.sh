@@ -1,13 +1,4 @@
-err_catch() {
-  if [ "$1" = "0" ]; then
-    echo "$2 success"
-  else
-    echo "catch an error"
-    echo "any type will off this terminal"
-    read -r
-    exit
-  fi
-}
+source ./utils.sh
 
 frp_dir=/home/richard/work/frp/frp_0.47.0_linux_arm
 app_name=frpc
