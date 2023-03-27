@@ -2,8 +2,6 @@ source "$(cd ~ || return && pwd)/.bashrc"
 
 project_path=$(shell_path "$0")
 
-cd "$project_path/frp" || exit
-
 frp_download_link="https://github.com/fatedier/frp/releases/download/v0.48.0/frp_0.48.0_linux_arm64.tar.gz"
 wget "$frp_download_link"
 
@@ -15,5 +13,5 @@ err_catch $? "rename frp dir"
 
 cd frp_client || return
 
-sh "$project_path/shs/update_frp_config.sh"
+sh "$project_path/update_frp_config.sh"
 
