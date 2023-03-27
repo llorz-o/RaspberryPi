@@ -1,6 +1,5 @@
-source ./shs/utils.sh
+source "$(cd ~ || return && pwd)/.bashrc"
 
-mkdir_if_not "./test/22"
-err_catch $? "mkdir_if_not"
-
+cd aa 2>>"$LOG_FILE"
+err_catch $? "test command error catch"
 read

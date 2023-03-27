@@ -1,19 +1,9 @@
-windows `tree /f`
-
+```bash
+arch # 查看架构
+uname -a  # 查看系统以及架构信息
+lscpu
 ```
-│   auto_test.sh # 测试树莓派启动时的自动任务脚本
-│   backup.sh
-│   readme.md
-```
+ARM架构：aarch64、arm64
+X86架构：x86_64、x64、AMD64
+MIPS架构：mips
 
-## 账号密码
-
-```
-# sync
-RichardJoe
-725361
-
-# aria2 filebrowser
-richard
-725361
-```
