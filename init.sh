@@ -12,7 +12,7 @@ root_path=$(pwd)
 if [ ! -f ".bashrc" ]; then
     touch ".bashrc"
     echo ". $absolute_shell_dir/shs/utils.sh" > .bashrc
-    echo "export LOG_FILE=\"$absolute_shell_dir/init.log\"" >> .bashrc
+    echo "export LOG_FILE=$absolute_shell_dir/init.log" >> .bashrc
 else
     match_bashrc=$(grep -r -n -e "^. .*utils.sh$" .bashrc)
     if [ -z "$match_bashrc" ]; then
@@ -21,7 +21,7 @@ else
 
     match_log=$(grep -r -n -e "^export .*init.log$" .bashrc)
     if [ -z "$match_log" ]; then
-      echo "export LOG_FILE=\"$absolute_shell_dir/init.log\"" >> .bashrc
+      echo "export LOG_FILE=$absolute_shell_dir/init.log" >> .bashrc
     fi
 fi
 
