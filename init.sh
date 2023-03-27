@@ -25,7 +25,7 @@ else
     fi
 fi
 
-source "$root_path/.bashrc"
+source "$absolute_shell_dir/shs/utils.sh"
 
 is_file "$absolute_shell_dir/init.log"
 err_catch $? "is file init.log"
