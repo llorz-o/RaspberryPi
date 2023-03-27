@@ -9,7 +9,7 @@ file_name=frpc.ini
 frpc_app_path=$frp_dir/$app_name
 new_config=$project_path/frpc.ini
 
-$frpc_app_path verify -c "$new_config" 2>> "$LOG_FILE"
+$frpc_app_path verify -c "$new_config"
 err_catch $? "frpc config verify"
 
 file_content=$(cat "$new_config")
