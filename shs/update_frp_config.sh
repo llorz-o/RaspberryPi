@@ -2,12 +2,12 @@ source "$(cd ~ || return && pwd)/.utils.sh"
 
 project_path=$(shell_path "$0")
 
-frp_dir=$project_path/frp/frp_client
+frp_dir=$project_path/frp_client
 app_name=frpc
 file_name=frpc.ini
 # frpc 配置文件路径
 frpc_app_path=$frp_dir/$app_name
-new_config=project_path/frp/frpc.ini
+new_config=$project_path/frpc.ini
 
 $frpc_app_path verify -c "$new_config" 2>> "$LOG_FILE"
 err_catch $? "frpc config verify"

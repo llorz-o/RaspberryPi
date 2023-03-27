@@ -19,7 +19,7 @@ err_catch() {
     echo "log file path is:$LOG_FILE"
     echo "!!! $time $2 !!!" >> "$LOG_FILE"
     echo -e "" >> "$LOG_FILE"
-    echo "script error!!!"
+    echo "<$2> script error!!!"
     read -r
     exit
   fi
