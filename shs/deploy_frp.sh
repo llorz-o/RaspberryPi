@@ -9,7 +9,7 @@ if [ ! -f "$project_path/frp_0.48.0_linux_arm64.tar.gz" ]; then
   cd "$project_path" && wget "$frp_download_link"
 fi
 
-tar -xf "$project_path/frp_0.48.0_linux_arm64.tar.gz" 2 >> "$LOG_FILE"
+tar -xf "$project_path/frp_0.48.0_linux_arm64.tar.gz" 2>> "$LOG_FILE"
 err_catch $? "tar frp gz file"
 
 mv frp_0.48.0_linux_arm64 frp_client

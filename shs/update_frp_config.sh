@@ -9,7 +9,7 @@ file_name=frpc.ini
 frpc_app_path=$frp_dir/$app_name
 new_config=project_path/frp/frpc.ini
 
-$frpc_app_path verify -c "$new_config" 2 >> "$LOG_FILE"
+$frpc_app_path verify -c "$new_config" 2>> "$LOG_FILE"
 err_catch $? "frpc config verify"
 
 file_content=$(cat "$new_config")
@@ -17,5 +17,5 @@ file_content=$(cat "$new_config")
 echo "$file_content" > "$frp_dir/$file_name"
 err_catch $? "rewrite config"
 
-pm2 restart server_frp 2 >> "$LOG_FILE"
+pm2 restart server_frp 2>> "$LOG_FILE"
 err_catch $? "restart pm2 frp"
