@@ -11,12 +11,12 @@ cd ~ || exit
 root_path=$(pwd)
 if [ ! -f ".bashrc" ]; then
     touch ".bashrc"
-    echo "source $absolute_shell_dir/shs/utils.sh" > .bashrc
+    echo ". $absolute_shell_dir/shs/utils.sh" > .bashrc
     echo "export LOG_FILE=\"$absolute_shell_dir/init.log\"" >> .bashrc
 else
-    match_bashrc=$(grep -r -n -e "^source .*utils.sh$" .bashrc)
+    match_bashrc=$(grep -r -n -e "^. .*utils.sh$" .bashrc)
     if [ -z "$match_bashrc" ]; then
-      echo "source $absolute_shell_dir/shs/utils.sh" >> .bashrc
+      echo ". $absolute_shell_dir/shs/utils.sh" >> .bashrc
     fi
 
     match_log=$(grep -r -n -e "^export .*init.log$" .bashrc)
@@ -25,7 +25,7 @@ else
     fi
 fi
 echo "$root_path"
-source "$root_path/.bashrc"
+. "$root_path/.bashrc"
 
 is_file "$absolute_shell_dir/init.log"
 err_catch $? "is file init.log"

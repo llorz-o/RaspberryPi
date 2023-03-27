@@ -1,4 +1,4 @@
-source "$(cd ~ || return && pwd)/.bashrc"
+. "$(cd ~ || return && pwd)/.bashrc"
 
 cd aa 2>>"$LOG_FILE"
 err_catch $? "test command error catch"
