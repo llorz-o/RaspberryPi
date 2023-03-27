@@ -21,7 +21,6 @@ else
 
     match_log=$(grep -r -n -e "^export .*init.log$" .bashrc)
     if [ -z "$match_log" ]; then
-      echo "source $absolute_shell_dir/shs/utils.sh" >> .bashrc
       echo "export LOG_FILE=\"$absolute_shell_dir/init.log\"" >> .bashrc
     fi
 fi
