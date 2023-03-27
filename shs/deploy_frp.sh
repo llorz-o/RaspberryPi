@@ -4,8 +4,6 @@ project_path=$(shell_path "$0")
 
 echo "当前文件夹为：$project_path"
 
-exit
-
 frp_download_link="https://github.com/fatedier/frp/releases/download/v0.48.0/frp_0.48.0_linux_arm64.tar.gz"
 wget "$frp_download_link"
 
