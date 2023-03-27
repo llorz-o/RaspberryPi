@@ -12,7 +12,7 @@
 # it will only delete files with it's own $HOSTNAME.
 
 # Redirect output
-exec >>/home/richard/ssd0/backup.log
+exec >>/media/sda1/backup.log
 exec 2>&1
 
 echo "=============== Start Raspi Backup ==============="
@@ -20,7 +20,7 @@ echo $(date "+%Y-%m-%d %H:%M:%S") UTC
 echo
 
 # Declare vars and set standard values
-backup_path=/home/richard/ssd0/backup
+backup_path=/media/sda1/backup
 retention_days=30
 
 # Check that we are root!

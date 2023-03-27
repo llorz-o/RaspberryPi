@@ -1,2 +1,4 @@
-cd ~/work/frp/frp_0.47.0_linux_arm || return
+source "$(cd ~ && pwd)/.utils.sh"
+dir=$(shell_path "$0")
+cd "$dir"/frp/frp_client || return
 ./frpc -c ./frpc.ini
