@@ -1,4 +1,4 @@
-source "$(cd ~ || return && pwd)/.bashrc"
+source "$(cd ~ || return && pwd)/.utils.sh"
 
 project_path=$(shell_path "$0")
 
