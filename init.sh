@@ -32,5 +32,5 @@ err_catch $? "is file init.log"
 
 # 之前的代码不要改动
 
-pm2 start ~/RaspberryPi/server_frp.sh 2>>"$LOG_FILE"
-err_catch $? "init.sh pm2 server_frp"
+#pm2 start ~/RaspberryPi/server_frp.sh 2>>"$LOG_FILE"
+#err_catch $? "init.sh pm2 server_frp"
