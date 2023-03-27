@@ -24,6 +24,7 @@ else
       echo "export LOG_FILE=\"$absolute_shell_dir/init.log\"" >> .bashrc
     fi
 fi
+echo "$root_path"
 source "$root_path/.bashrc"
 
 is_file "$absolute_shell_dir/init.log"
