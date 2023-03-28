@@ -18,6 +18,45 @@ zlc@ID725361
 
 ```
 
+## samba
+`/etc/samba/smb.conf`
+```ini
+[aria2]
+  path = /media/sda1/aria2/downloads
+  public = yes
+  writable = yes
+  create mask = 0777
+  force create mode = 0777
+  directory mask = 0777
+  force directory mode = 0777
+  read only = no
+  browseable = yes
+  guest ok = yes
+  guest only = yes
+
+[nextcloud]
+  path = /media/sda1/nextcloud/html/data/admin/files
+  public = yes
+  writable = yes
+  create mask = 0777
+  force create mode = 0777
+  directory mask = 0777
+  force directory mode = 0777
+  read only = no
+  browseable = yes
+  guest ok = yes
+  guest only = yes
+```
+
+
+
+## nextcloud
+
+```tex
+admin
+725361
+```
+
 
 
 ## 可能用到的镜像
