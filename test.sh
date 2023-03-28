@@ -1,4 +1,4 @@
-source "$(cd ~ || return && pwd)/.utils.sh"
+source "$(cd ~ && pwd)/.utils.sh"
 
 files=$(ls ./*init.sh*)
 if [ -z "$files" ]; then

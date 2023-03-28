@@ -12,7 +12,7 @@ cd ~ || return
 touch .utils.sh
 cat "$absolute_shell_dir/shs/utils.sh" > .utils.sh
 
-source "$(cd ~ || return && pwd)/.utils.sh"
+source "$(cd ~ && pwd)/.utils.sh"
 
 is_file "$absolute_shell_dir/init.log"
 err_catch $? "is file init.log"
