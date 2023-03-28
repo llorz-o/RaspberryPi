@@ -12,4 +12,16 @@ MIPS架构：mips
 ```tex
 account	admin
 passwd	zlc@ID725361
+
+richard
+zlc@ID725361
+
 ```
+
+
+
+## 可能用到的镜像
+
+- datarhei/restreamer 视频直播流
+- next-cloud 云盘服务
+- 
