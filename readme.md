@@ -7,3 +7,9 @@ ARM架构：aarch64、arm64
 X86架构：x86_64、x64、AMD64
 MIPS架构：mips
 
+## docker portainer
+
+```tex
+account	admin
+passwd	zlc@ID725361
+```
