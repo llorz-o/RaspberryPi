@@ -63,4 +63,6 @@ admin
 
 - datarhei/restreamer 视频直播流
 - next-cloud 云盘服务
-- 
+- open-wrt 路由器
+- jellyfin 媒体服务器
+- cloudflare_ddns 动态dns 解析
