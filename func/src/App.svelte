@@ -51,7 +51,7 @@
     ]
     let index = window.localStorage.getItem("INDEX") || 0
     let indexItem = functions[index]
-    let iframeUrl = indexItem && !isLocal ? indexItem.url : host + indexItem.port
+    let iframeUrl = indexItem && !isLocal ? indexItem.url : `${host}:${indexItem.port}`
 
     function changeSite(_index) {
         index = _index
@@ -61,7 +61,7 @@
             return
         }
         else if (isLocal) {
-            iframeUrl = host + indexItem.port
+            iframeUrl = `${host}:${indexItem.port}`
         }
         else {
             iframeUrl = functions[_index].url
