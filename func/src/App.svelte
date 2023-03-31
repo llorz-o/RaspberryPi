@@ -33,14 +33,14 @@
             port: "8090"
         },
         {
-            url: "https://nextcloud.llorz.online",
-            name: "Nextcloud",
-            port: "8888"
-        },
-        {
             url: "https://portainer.llorz.online",
             name: "Portainer",
             port: "9000"
+        },
+        {
+            url: "https://nextcloud.llorz.online",
+            name: "Nextcloud (_blank)",
+            port: "8888"
         },
         {
             url: "https://38.54.86.157:7800/446defb6",
