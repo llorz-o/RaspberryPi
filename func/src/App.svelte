@@ -1,4 +1,6 @@
 <script>
+    const host = location.host
+    const isLocal = host.indexOf('192.168') > 0
     const functions = [
         {
             url: "https://1024.llorz.online",
@@ -36,13 +38,19 @@
             port: "9000"
         },
     ]
-    const index = window.localStorage.getItem("INDEX")
-    const initItem = functions[index]
-    let iframeUrl = initItem ? initItem.url : ''
+    let index = window.localStorage.getItem("INDEX") || 0
+    let indexItem = functions[index]
+    let iframeUrl = indexItem ? indexItem.url : host + indexItem.port
 
-    function changeSite(index) {
-        iframeUrl = functions[index].url
-        window.localStorage.setItem("INDEX", index)
+    function changeSite(_index) {
+        index = _index
+        if (isLocal) {
+            indexItem = functions[index]
+            iframeUrl = host + indexItem.port
+        } else {
+            iframeUrl = functions[_index].url
+        }
+        window.localStorage.setItem("INDEX", _index)
     }
 </script>
 
@@ -55,7 +63,7 @@
         {/each}
     </div>
     <div class="content">
-        <iframe src="{iframeUrl}" frameborder="0"></iframe>
+        <iframe src="{iframeUrl}" frameborder="0" title="content"></iframe>
     </div>
 </main>
 
