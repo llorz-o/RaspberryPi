@@ -1,6 +1,6 @@
 <script>
     const host = location.host
-    const isLocal = host.indexOf('192.168') > 0
+    const isLocal = host.indexOf('192.168') >= 0
     const functions = [
         {
             url: "https://1024.llorz.online",
