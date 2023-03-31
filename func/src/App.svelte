@@ -37,6 +37,12 @@
             name: "Portainer",
             port: "9000"
         },
+        {
+            url: "https://38.54.86.157:7800/446defb6",
+            name: "宝塔面板",
+            port: null,
+            isOnlyUrl: true
+        }
     ]
     let index = window.localStorage.getItem("INDEX") || 0
     let indexItem = functions[index]
@@ -44,8 +50,8 @@
 
     function changeSite(_index) {
         index = _index
-        if (isLocal) {
-            indexItem = functions[index]
+        indexItem = functions[index]
+        if (isLocal && !indexItem.isOnlyUrl) {
             iframeUrl = host + indexItem.port
         } else {
             iframeUrl = functions[_index].url
