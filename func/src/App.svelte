@@ -18,6 +18,11 @@
             port: "6801"
         },
         {
+            url: "https://transmission.llorz.online",
+            name: "Transmission",
+            port: "9091"
+        },
+        {
             url: "https://sync.llorz.online",
             name: "Sync",
             port: "58888"
