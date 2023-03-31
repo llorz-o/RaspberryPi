@@ -414,7 +414,7 @@ var app = (function () {
     	return child_ctx;
     }
 
-    // (65:8) {#each functions as func,index}
+    // (70:8) {#each functions as func,index}
     function create_each_block(ctx) {
     	let button;
     	let t0_value = /*func*/ ctx[8].name + "";
@@ -434,7 +434,7 @@ var app = (function () {
     			t1 = space();
     			attr_dev(button, "class", "item svelte-1lya0vw");
     			attr_dev(button, "key", /*func*/ ctx[8].url);
-    			add_location(button, file, 65, 12, 1720);
+    			add_location(button, file, 70, 12, 1823);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, button, anchor);
@@ -460,7 +460,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(65:8) {#each functions as func,index}",
+    		source: "(70:8) {#each functions as func,index}",
     		ctx
     	});
 
@@ -495,16 +495,16 @@ var app = (function () {
     			div1 = element("div");
     			iframe = element("iframe");
     			attr_dev(div0, "class", "sidebar svelte-1lya0vw");
-    			add_location(div0, file, 63, 4, 1646);
+    			add_location(div0, file, 68, 4, 1749);
     			if (!src_url_equal(iframe.src, iframe_src_value = /*iframeUrl*/ ctx[0])) attr_dev(iframe, "src", iframe_src_value);
     			attr_dev(iframe, "frameborder", "0");
     			attr_dev(iframe, "title", "content");
     			attr_dev(iframe, "class", "svelte-1lya0vw");
-    			add_location(iframe, file, 71, 8, 1907);
+    			add_location(iframe, file, 76, 8, 2010);
     			attr_dev(div1, "class", "content svelte-1lya0vw");
-    			add_location(div1, file, 70, 4, 1877);
+    			add_location(div1, file, 75, 4, 1980);
     			attr_dev(main, "class", "svelte-1lya0vw");
-    			add_location(main, file, 62, 0, 1635);
+    			add_location(main, file, 67, 0, 1738);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -591,7 +591,7 @@ var app = (function () {
     		{
     			url: "https://aria2ng.llorz.online",
     			name: "Aria2",
-    			port: "6800"
+    			port: "6801"
     		},
     		{
     			url: "https://sync.llorz.online",
@@ -615,9 +615,9 @@ var app = (function () {
     		},
     		{
     			url: "https://38.54.86.157:7800/446defb6",
-    			name: "宝塔面板",
+    			name: "宝塔面板(_blank)",
     			port: null,
-    			isOnlyUrl: true
+    			_blank: true
     		}
     	];
 
@@ -629,7 +629,10 @@ var app = (function () {
     		$$invalidate(1, index = _index);
     		indexItem = functions[index];
 
-    		if (isLocal && !indexItem.isOnlyUrl) {
+    		if (indexItem._blank) {
+    			window.open(indexItem.url, "_blank");
+    			return;
+    		} else if (isLocal) {
     			$$invalidate(0, iframeUrl = host + indexItem.port);
     		} else {
     			$$invalidate(0, iframeUrl = functions[_index].url);

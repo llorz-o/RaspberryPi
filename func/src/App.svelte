@@ -15,7 +15,7 @@
         {
             url: "https://aria2ng.llorz.online",
             name: "Aria2",
-            port: "6800"
+            port: "6801"
         },
         {
             url: "https://sync.llorz.online",
@@ -39,9 +39,9 @@
         },
         {
             url: "https://38.54.86.157:7800/446defb6",
-            name: "宝塔面板",
+            name: "宝塔面板(_blank)",
             port: null,
-            isOnlyUrl: true
+            _blank: true
         }
     ]
     let index = window.localStorage.getItem("INDEX") || 0
@@ -51,9 +51,14 @@
     function changeSite(_index) {
         index = _index
         indexItem = functions[index]
-        if (isLocal && !indexItem.isOnlyUrl) {
+        if (indexItem._blank) {
+            window.open(indexItem.url,"_blank")
+            return
+        }
+        else if (isLocal) {
             iframeUrl = host + indexItem.port
-        } else {
+        }
+        else {
             iframeUrl = functions[_index].url
         }
         window.localStorage.setItem("INDEX", _index)
