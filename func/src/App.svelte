@@ -40,7 +40,8 @@
         {
             url: "https://nextcloud.llorz.online",
             name: "Nextcloud (_blank)",
-            port: "8888"
+            port: "8888",
+            _blank: true
         },
         {
             url: "https://38.54.86.157:7800/446defb6",
