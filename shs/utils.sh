@@ -1,4 +1,4 @@
-export LOG_FILE=~/init.log
+export LOG=~/utils.log
 # $0 在脚本首是指 当前脚本相对于当前命令行所在目录的 相对路径文件
 # dirname 是指脚本所在目录相对于当前命令行所在目录的 相对路径文件夹
 # pwd 是当前命令行所在路径
@@ -16,9 +16,9 @@ err_catch() {
     echo "$2 success"
   else
     time=$(date "+%Y%m%d-%H:%M:%S")
-    echo "log file path is:$LOG_FILE"
-    echo "!!! $time $2 !!!" >> "$LOG_FILE"
-    echo -e "" >> "$LOG_FILE"
+    echo "log file path is:$LOG"
+    echo "!!! $time $2 !!!" >> "$LOG"
+    echo -e "" >> "$LOG"
     echo "<$2> script error!!!"
     read -r
     exit

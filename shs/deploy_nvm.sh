@@ -8,8 +8,8 @@ cd ~ || return
 is_file .nvmrc
 echo "19.8.1" > .nvmrc
 
-nvm install 19.8.1 2>> "$LOG_FILE"
+nvm install 19.8.1 2>> "$LOG"
 err_catch $? "nvm install 19.8.1"
 
-npm install -g pm2 2>> "$LOG_FILE"
+npm install -g pm2 2>> "$LOG"
 err_catch $? "npm install pm2"

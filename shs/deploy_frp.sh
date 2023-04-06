@@ -11,7 +11,7 @@ if [ ! -f "$frp_path/frp_0.48.0_linux_arm64.tar.gz" ]; then
   cd "$frp_path" && wget "$frp_download_link"
 fi
 
-tar -xf "$frp_path/frp_0.48.0_linux_arm64.tar.gz" 2>> "$LOG_FILE"
+tar -xf "$frp_path/frp_0.48.0_linux_arm64.tar.gz" 2>> "$LOG"
 err_catch $? "tar frp gz file"
 
 cd "$frp_path" && mv frp_0.48.0_linux_arm64 frp_client

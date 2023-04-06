@@ -1,8 +1,13 @@
 source "$(cd ~ && pwd)/.utils.sh"
 
-files=$(ls ./*init.sh*)
-if [ -z "$files" ]; then
+${null:?"null is not valid"}
+
+if [ ${vaa:+1} ]; then
   echo "1"
+else
+  echo "vaa not available"
 fi
-echo "$files"
-read
+
+read -r -t 5
+exit
+

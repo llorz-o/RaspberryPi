@@ -18,5 +18,5 @@ err_catch $? "frpc config verify"
 #echo "$file_content" > "$frp_client/$file_name"
 #err_catch $? "rewrite config"
 
-pm2 restart server_frp 2>> "$LOG_FILE"
+pm2 restart server_frp 2>> "$LOG"
 err_catch $? "restart pm2 frp"
