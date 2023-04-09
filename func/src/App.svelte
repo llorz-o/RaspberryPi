@@ -50,6 +50,7 @@
             _blank: true
         }
     ]
+    let isBlankMode = false
     let index = window.localStorage.getItem("INDEX") || 0
     let indexItem = functions[index]
     let iframeUrl = indexItem && !isLocal ? indexItem.url : `http://${host}:${indexItem.port}`
@@ -58,16 +59,20 @@
         index = _index
         indexItem = functions[index]
         if (indexItem._blank) {
-            window.open(indexItem.url,"_blank")
-            return
-        }
-        else if (isLocal) {
+            window.open(indexItem.url, "_blank")
+        } else if (isLocal) {
+            if (isBlankMode) {
+                isBlankMode = false
+                return window.open(`http://${host}:${indexItem.port}`, "_blank")
+            }
             iframeUrl = `http://${host}:${indexItem.port}`
-        }
-        else {
+        } else {
+            if (isBlankMode) {
+                isBlankMode = false
+                return window.open(functions[_index].url, "_blank")
+            }
             iframeUrl = functions[_index].url
         }
-        window.localStorage.setItem("INDEX", _index)
     }
 </script>
 
@@ -78,6 +83,13 @@
                 {func.name}
             </button>
         {/each}
+        <input type="text" readonly value="{iframeUrl}" on:click={() => window.open(iframeUrl,"_blank")}>
+        <div style="display: flex;align-content: center">
+            <label for="blankModeCheckbox" style="user-select: none;">
+                _Blank mode
+            </label>
+            <input style="margin: 0 0 0 5px;" id="blankModeCheckbox" type="checkbox" bind:checked="{isBlankMode}">
+        </div>
     </div>
     <div class="content">
         <iframe src="{iframeUrl}" frameborder="0" title="content"></iframe>
