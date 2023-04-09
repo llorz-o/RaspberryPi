@@ -15,5 +15,8 @@ source "$(cd ~ && pwd)/.utils.sh"
 # 之前的代码不要改动!!!!!
 # 之前的代码不要改动!!!!!
 
-#pm2 start ~/RaspberryPi/server_frp.sh 2>>"$LOG"
-#err_catch $? "init.sh pm2 server_frp"
+pm2 start ~/RaspberryPi/server_frp.sh 2>>"$LOG"
+err_catch $? "init.sh pm2 server_frp"
+
+pm2 start ~/RaspberryPi/server_frp_ssh.sh 2>>"$LOG"
+err_catch $? "init.sh pm2 server_frp_ssh"
