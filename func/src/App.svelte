@@ -65,6 +65,7 @@
         indexItem = functions[index]
         if (indexItem._blank) {
             window.open(indexItem.url, "_blank")
+            return
         } else if (isLocal) {
             if (isBlankMode) {
                 isBlankMode = false
@@ -78,6 +79,7 @@
             }
             iframeUrl = functions[_index].url
         }
+        window.localStorage.setItem("INDEX",index)
     }
 </script>
 
@@ -88,7 +90,7 @@
                 {func.name}
             </button>
         {/each}
-        <input type="text" readonly value="{iframeUrl}" on:click={() => window.open(iframeUrl,"_blank")}>
+        <input type="text" readonly value="{iframeUrl}">
         <div style="display: flex;align-content: center">
             <label for="blankModeCheckbox" style="user-select: none;">
                 _Blank mode
