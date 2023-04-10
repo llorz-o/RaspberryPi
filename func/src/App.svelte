@@ -38,6 +38,11 @@
             port: "9000"
         },
         {
+            url: "https://cron.llorz.online",
+            name: "Crontab",
+            port: "8000"
+        },
+        {
             url: "https://nextcloud.llorz.online",
             name: "Nextcloud (_blank)",
             port: "8888",
