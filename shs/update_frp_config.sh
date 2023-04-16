@@ -2,6 +2,7 @@ source "$(cd ~ && pwd)/.utils.sh"
 
 project_path=$(shell_path "$0")
 
+services_dir=$project_path/../services
 frp_dir=$project_path/../frp
 frp_client=$frp_dir/frp_client
 app_name=frpc
@@ -18,5 +19,5 @@ err_catch $? "frpc config verify"
 #echo "$file_content" > "$frp_client/$file_name"
 #err_catch $? "rewrite config"
 
-pm2 restart server_frp 2>> "$LOG"
+cd "$services_dir" && pm2 restart frp 2>> "$LOG"
 err_catch $? "restart pm2 frp"
