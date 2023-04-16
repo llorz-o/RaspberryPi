@@ -1,4 +1,3 @@
-source "$(cd ~ && pwd)/.utils.sh"
-dir=$(shell_path "$0")
-cd "$dir"/frp/frp_client || return
-./frpc -c "$dir/frp/frpc.ini"
+dir=/home/pi/RaspberryPi
+client=$dir/frp/frp_client
+cd $client && ./frpc -c "$dir/frp/frpc.ini"
