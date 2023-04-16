@@ -6,11 +6,11 @@ PM2="/root/.nvm/versions/node/v19.8.1/bin/pm2"
 
 function main() {
 
-  cd "$SERVICES_DIR" && $PM2 start frp-ssh
+  cd "$SERVICES_DIR" && $PM2 start frp-ssh.sh
 
-  cd "$SERVICES_DIR" && $PM2 start frp
+  cd "$SERVICES_DIR" && $PM2 start frp.sh
 
-  cd "$SERVICES_DIR" && $PM2 start cron
+  cd "$SERVICES_DIR" && $PM2 start cron.sh
 }
 
 main >>~/reboot.log 2>&1
