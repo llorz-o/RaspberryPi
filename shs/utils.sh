@@ -36,3 +36,20 @@ is_dir() {
     mkdir "$1"
   fi
 }
+
+safe_sed() {
+  if [ "$(uname)" == "Darwin" && "$(which sed)" == "/usr/bin/sed" ]; then
+    brew install gnu-sed
+    # PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+    # shellcheck disable=SC2016
+    echo 'PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"' >> ~/.zshrc
+    cd ~ && source .zshrc
+
+    if [ "$(which sed)" != "/usr/local/opt/gnu-sed/libexec/gnubin/sed" ]; then
+      echo "gnu-sed install failed, pls install it manual"
+      return 1
+    fi
+    return 0
+  fi
+  return 0
+}
